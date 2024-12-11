@@ -1,0 +1,373 @@
+/* إعدادات عامة */
+body {
+    font-family: "Zilla Slab", serif;
+    margin: 0;
+    background-color: white; 
+    color: black; 
+}
+
+/* تصميم الناف بار */
+.sidebar {
+    width: 250px; 
+    background-color: black; 
+    color: white; 
+    padding: 40px;
+    height: 90vh; 
+    margin: 2.5rem; 
+    text-align: center; 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5); 
+    border-radius: 20px; 
+    transition: all 0.3s ease; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 1000; 
+}
+
+.sidebar.top {
+    width: 100%; 
+    height: 70px;
+    margin: 0; 
+    border-radius: 0; 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+    padding: 10px 0; 
+}
+
+.sidebar ul {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    padding: 0; 
+    margin: 0; 
+    list-style: none; 
+}
+
+.sidebar ul li {
+    font-size: 1.1rem;
+    margin: 1.5rem; 
+}
+
+.sidebar.hidden {
+    display: none; 
+}
+
+.sidebar ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    text-decoration: none; 
+}
+
+/* تصميم المحتوى */
+.content {
+    flex: 1; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* تأثير الانزلاق */
+@keyframes slideIn {
+    from {
+        transform: translateY(20px); 
+        opacity: 0; 
+    }
+    to {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+.hero h1, .hero p {
+    animation: slideIn 0.8s ease forwards; 
+    opacity: 0; 
+}
+
+.hero h1 {
+    animation-delay: 0.2s; 
+}
+
+.hero p {
+    animation-delay: 0.4s; 
+}
+
+/* تصميم الرسالة المنبثقة */
+.notification {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background-color: #000000; 
+    color: white; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1000; 
+    opacity: 0; 
+    transform: translateY(-20px); 
+    transition: opacity 0.5s ease, transform 0.5s ease; 
+}
+
+.notification.show {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* تصميم قسم الواجهة الأولى */
+.hero {
+    position: relative;
+    color: black;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1, p {
+    color: black; 
+}
+
+/* تصميم قسم المنتجات */
+.product {
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s, opacity 0.5s; 
+    background-color: rgba(255, 255, 255, 0); 
+    margin: 15px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    opacity: 0; 
+    transform: translateY(20px); 
+    animation: slideIn 0.5s forwards; 
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+#products {
+    margin-top: 50px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    max-width: 1200px; 
+}
+
+.product img {
+    width: 100%; 
+    height: 13rem; 
+    object-fit: cover; 
+}
+
+/* تصميم السلة المنبثقة */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
+}
+
+.modal.show {
+    display: block; 
+    opacity: 1; 
+}
+
+/* محتوى السلة */
+.modal-content {
+    background-color: white; 
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888; 
+    width: 100%; 
+    max-width: 600px; 
+    border-radius: 10px; 
+    transform: translateY(-30px); 
+    transition: transform 0.5s ease; 
+}
+
+.modal.show .modal-content {
+    transform: translateY(0); 
+}
+
+.close {
+    color: #aaa; 
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black; 
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* تصميم السلة */
+.shopping-cart {
+    padding: 20px;
+    background-color: white; 
+    border: 1px solid #dee2e6; 
+    border-radius: 5px; 
+}
+
+.cart-item {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 10px; 
+}
+
+.item-name, .item-quantity {
+    flex: 1; 
+}
+
+.item-controls {
+    display: flex; 
+    align-items: center; 
+    margin-left: auto; 
+}
+
+.item-controls button {
+    margin-left: 5px; 
+}
+
+/* تصميم الأزرار */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0000007e;
+    color: white; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: black; 
+}
+
+/* إعدادات التحميل */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); 
+    z-index: 9999; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.5s ease; 
+}
+
+.loader.hidden {
+    opacity: 0; 
+    pointer-events: none; 
+}
+
+.spinner {
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #000000; 
+    border-radius: 50%;
+    width: 60px; 
+    height: 60px; 
+    animation: spin 1s linear infinite; 
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.contact-form {
+    background-color: white; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; 
+    max-width: 600px; 
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    color: black; 
+}
+
+.contact-form .form-group label {
+    font-weight: bold; 
+    color: black; 
+}
+
+.contact-form .form-control {
+    border-radius: 4px; 
+    background-color: white; 
+}
+
+.contact-form .btn {
+    width: 100%; 
+    background-color: #000000;
+    color: white; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.message-notification {
+    background-color: #28a745; 
+    color: rgb(255, 255, 255); 
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px; 
+    text-align: center;
+    font-size: large;
+    display: none; 
+    opacity: 0; 
+    transition: opacity 1s ease; 
+}
+
+.message-notification.show {
+    display: block; 
+    opacity: .9; 
+}
+
+.message-notification.hide {
+    opacity: 0; 
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%; 
+        height: auto; 
+    }
+
+    .content {
+        padding: 10px; 
+    }
+
+    .product img {
+        height: 100px; 
+    }
+}

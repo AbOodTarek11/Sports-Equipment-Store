@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Equipment Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- الناف بار -->
+            <nav class="sidebar">
+                <h2>Sports Equipment</h2>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/Day 10 - Commerce Website/pages/Signup/signup.html">Sign up</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="/Day 10 - Commerce Website/pages/Login/login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#" id="open-cart">Cart <i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+            </nav>
+
+            <!-- سلة المشتريات المنبثقة -->
+        <div class="modal" id="cart-modal">
+            <div class="modal-content">
+                <span class="close" id="close-cart">&times;</span>
+                <h2>Shopping Cart</h2>
+                <div class="shopping-cart" id="shopping-cart">
+                    <p id="empty-cart-message">No products in the cart.</p>
+                    <div id="cart-items"></div>
+                </div>
+                <button id="clear-cart" class="btn btn-danger">Clear All Products</button>
+                <button id="checkout" class="btn btn-primary">Checkout</button>
+            </div>
+        </div>
+
+            <!-- محتوى الصفحة -->
+            <main class="content">
+                <section id="home" class="hero">
+                    <div class="container">
+                        <h1>Welcome to the Sports Equipment Store</h1>
+                        <p>Your one-stop shop for all sports equipment!</p>
+                    </div>
+                </section>
+
+                <!-- رسالة منبثقة -->
+                <div id="notification" class="notification" style="display: none;">
+                    <p>Product added to the cart!</p>
+                </div>
+
+                <!-- قسم المنتجات -->
+                <section id="products" class="container my-5">
+                    <h2 class="text-center">Our Products</h2>
+                    <div class="row product-list">
+
+                        <!-- المنتجات -->
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/Football.png" alt="Football">
+                                <h3>Football</h3>
+                                <p>15 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="1">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/Bike.png" alt="Bicycle">
+                                <h3>Bicycle</h3>
+                                <p>200 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="2">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/tennis-racquet-and-tennis-ball-i.png" alt="Tennis Racket">
+                                <h3>Tennis Racket</h3>
+                                <p>50 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="3">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/basketball ball.png" alt="Basketball">
+                                <h3>Basketball</h3>
+                                <p>20 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="4"> Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/a-close-up-of-a-blue-and-silver.png" alt="Bike Helmet">
+                                <h3>Bike Helmet</h3>
+                                <p>30 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="5">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/yoga-mat.png" alt="Yoga Mat">
+                                <h3>Yoga Mat</h3>
+                                <p>15 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="6">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/aviator-goggles-in-vintage-style.png" alt="Swimming Goggles">
+                                <h3>Swimming Goggles</h3>
+                                <p>10 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="7">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/antique-golf-clubs.png" alt="Golf Club">
+                                <h3>Golf Club</h3>
+                                <p>100 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="8">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/pair-of-leather-boxing-gloves-is.png" alt="Boxing Gloves">
+                                <h3>Boxing Gloves</h3>
+                                <p>25 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="9">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/3d-render-skateboard.png" alt="Skates">
+                                <h3>Skates</h3>
+                                <p>50 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="10">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/belt.png" alt="Weightlifting Belt">
+                                <h3>Weightlifting Belt</h3>
+                                <p>25 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="11">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/red-and-black-resistance-band-ex.png" alt="Resistance Band">
+                                <h3>Resistance Band</h3>
+                                <p>10 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="12">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/austria-austrian-football-boot.png" alt="Soccer Shoes">
+                                <h3>Soccer Shoes</h3>
+                                <p>50 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="13">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/lawn-tennis-ball-isolated-on-whi.png" alt="Tennis Balls">
+                                <h3>Tennis Balls</h3>
+                                <p>20 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="14">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/red-exercise-mat-object-shadow-c.png" alt="Fitness Mat">
+                                <h3>Fitness Mat</h3>
+                                <p>20 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="15">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/blue-ice-skates.png" alt="Ice Skates">
+                                <h3>Ice Skates</h3>
+                                <p>70 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="16">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/american-leather-football-ball-o.png" alt="American football">
+                                <h3>American football</h3>
+                                <p>20 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="17">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/volleyball.png" alt="Volleyball">
+                                <h3>Volleyball</h3>
+                                <p>15 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="18">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/white-sneaker-isolated-on-white.png" alt="Running Shoes">
+                                <h3>Running Shoes</h3>
+                                <p>50 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="19">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/fitness-tracker-smart-watch-blac.png" alt="Fitness Watch">
+                                <h3>Fitness Watch</h3>
+                                <p>100 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="20">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="product">
+                                <img src="/Day 10 - Commerce Website/img/two-red-ping-pong-paddles-and-wh.png" alt="Ping pong paddles">
+                                <h3>Ping pong paddles</h3>
+                                <p>40 $</p>
+                                <button class="btn btn-success add-to-cart" data-id="21">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <section id="contact" class="container my-5">
+            <h2 class="text-center">Contact Us</h2>
+            
+            <!-- إشعار منبثق -->
+            <div id="message-notification" class="message-notification" style="display: none;">
+                <p>Your message has been sent!</p>
+            </div>
+            
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

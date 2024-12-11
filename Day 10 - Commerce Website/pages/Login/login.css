@@ -1,0 +1,149 @@
+*{
+    margin: auto;
+    padding: auto;
+    font-family: "Zilla Slab", serif;
+    text-decoration: none;
+    list-style: none; 
+    display: flexbox;
+    }
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.login{
+    color: beige;
+    text-align: center;
+}
+
+.img{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(5px);
+}
+
+form h1{
+    margin-top: 15px;
+    color: #000000;
+    font-weight: bold;
+}
+
+form{
+    border-top: 3px solid;
+    border-right: 3px solid; 
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+    border-color: #493628;
+    margin-top: 100px;
+    border-radius: 20px;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+label{
+    position: relative;
+    margin-top: 40px;
+    color: #000000;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+input{
+    width: 50%;
+    margin: auto;
+    border-radius: 20px;
+    height: 10%;
+    background-color: #000000e1;
+    text-align: center;
+}
+
+input:focus{
+    background-color: #ffffffe1;
+    transform: scale(10deg);
+    transition: .3s ease;
+}
+
+#Home{
+    color: #000000;
+    font-size: larger;
+    position: absolute;
+    font-weight: bold;
+    top: 18%;
+    left: 66%;
+}
+
+button{
+    margin-bottom: 20px;
+    width: 15%;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    outline: 0;
+    border: 0;
+    color: #ffffff;
+    font-size: 15px;
+    background-color: #000000;
+    box-shadow: 3px 4.5px #00000098;
+}
+
+button:hover{
+    background-color: #020100;
+    color: #ffffff;
+    transition: .3s;
+}
+
+p {
+    font-size: 16px;
+    color: #000000;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+p a {
+    color: #000000;
+    text-decoration: none;
+}
+
+p a:hover {
+    color: #28a745;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); 
+    z-index: 9999; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.5s ease; 
+}
+
+.loader.hidden {
+    opacity: 0; 
+    pointer-events: none;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid #000000; 
+    border-radius: 50%;
+    width: 60px; 
+    height: 60px; 
+    animation: spin 1s linear infinite; 
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
